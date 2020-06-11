@@ -10,11 +10,20 @@ namespace CreateClass
     {
         static void Main(string[] args)
         {
-            var gigi = new Person("Gigi", new DateTime(04 / 05 / 2001));
+            var jim = new Person("Jim", new DateTime(04 / 05 / 2001));
+            jim.Gender = Person.GenderEnum.Male;
+            jim.Birthday = new DateTime(2001, 04, 01);
 
-            gigi.Birthday = new DateTime(2001, 04, 01);
+            Employee mike = new Employee();
+            mike.Name = "Mike";
+            mike.Birthday = new DateTime(2003, 02, 21);
+            mike.Gender = Person.GenderEnum.Male;
+            mike.Profession = "programmer";
+            mike.Salary = 5000000.12;
+            mike.RoomNumber = 5;
 
-            Console.WriteLine(gigi.ToString());
+            Console.WriteLine(jim.ToString());
+            Console.WriteLine(mike.ToString());
         }
     }
 }
