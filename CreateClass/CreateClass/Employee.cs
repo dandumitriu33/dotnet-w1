@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CreateClass
 {
-    public class Employee : Person, Room
+    public class Employee : Person, Room, ICloneable
     {
         public int RoomNumber { get; set; }
         public Employee() 
@@ -21,5 +21,13 @@ namespace CreateClass
             return $"The {Gender}'s Employee info is: Name: {Name}, Birthday: {Birthday.ToString()}, " +
                 $"Profession: {Profession}, Salary: {Salary}, Room {RoomNumber}";
         }
+
+        public object Clone()
+        {
+            Employee newEmployee = (Employee)this.MemberwiseClone();
+            newEmployee.RoomNumber = this.RoomNumber;
+            return newEmployee;
+        }
+
     }
 }

@@ -24,6 +24,16 @@ namespace CreateClass
 
             Console.WriteLine(jim.ToString());
             Console.WriteLine(mike.ToString());
+
+
+            Employee kovacs = new Employee();
+            kovacs.Name = "Kovacs";
+            kovacs.RoomNumber = 111;
+            Employee kovacs2 = (Employee)kovacs.Clone();
+            kovacs2.RoomNumber = 222;
+
+            Console.WriteLine(kovacs.ToString());
+            Console.WriteLine(kovacs2.ToString());
         }
     }
 }

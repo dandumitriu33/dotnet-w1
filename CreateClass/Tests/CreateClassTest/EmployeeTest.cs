@@ -26,5 +26,25 @@ namespace CreateClassTest
             // Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void EmployeeCloneTestValid()
+        {
+            // Arrange
+            Employee kovacs = new Employee();
+            kovacs.Name = "Kovacs";
+            kovacs.RoomNumber = 111;
+            int expected = 222;
+
+            // Act
+            Employee kovacs2 = (Employee)kovacs.Clone();
+            kovacs2.RoomNumber = 222;
+            int actual = kovacs2.RoomNumber;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
     }
 }
